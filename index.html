@@ -1,17 +1,19 @@
 <!doctype html>
 <html lang="pt-BR">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MusicPlay Professional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script src="/_sdk/element_sdk.js"></script>
-  <script src="/_sdk/data_sdk.js"></script><!-- Firebase SDK -->
-  <script type="module">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlay Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="/_sdk/data_sdk.js"></script><!-- Firebase SDK -->
+    <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
         import { getDatabase, ref, push, set, remove, onValue, off } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
-        
+
         const firebaseConfig = {
             apiKey: "AIzaSyD2uryhbal6zUmbhAyfUoElJaE5CyMIwfM",
             authDomain: "dengoplay-9defc.firebaseapp.com",
@@ -22,10 +24,10 @@
             appId: "1:933875447662:web:9e073c0fc0b092be90b37f",
             measurementId: "G-JQLHXD6QEW"
         };
-        
+
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
-        
+
         // Make Firebase available globally
         window.firebaseDB = database;
         window.firebaseRef = ref;
@@ -36,11 +38,11 @@
         window.firebaseOff = off;
         window.firebaseConnected = true;
     </script>
-  <style>
+    <style>
         body {
             box-sizing: border-box;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
@@ -124,7 +126,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 70%, rgba(147, 197, 253, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 40% 80%, rgba(96, 165, 250, 0.25) 0%, transparent 50%);
@@ -140,7 +142,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 30% 40%, rgba(251, 146, 60, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 70% 60%, rgba(239, 68, 68, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 50% 20%, rgba(245, 101, 101, 0.25) 0%, transparent 50%);
@@ -156,7 +158,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 25% 35%, rgba(34, 197, 94, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 75% 65%, rgba(74, 222, 128, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 45% 75%, rgba(16, 185, 129, 0.25) 0%, transparent 50%);
@@ -172,7 +174,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 35% 25%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 65% 75%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 20% 70%, rgba(196, 181, 253, 0.25) 0%, transparent 50%);
@@ -188,7 +190,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 40% 30%, rgba(14, 165, 233, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 60% 70%, rgba(56, 189, 248, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 80% 40%, rgba(125, 211, 252, 0.25) 0%, transparent 50%);
@@ -204,7 +206,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 30% 50%, rgba(245, 158, 11, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 70% 30%, rgba(251, 191, 36, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 50% 80%, rgba(252, 211, 77, 0.25) 0%, transparent 50%);
@@ -220,7 +222,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 25% 40%, rgba(229, 231, 235, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 75% 60%, rgba(209, 213, 219, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 50% 20%, rgba(243, 244, 246, 0.25) 0%, transparent 50%);
@@ -236,7 +238,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 35% 30%, rgba(75, 85, 99, 0.4) 0%, transparent 50%),
                 radial-gradient(circle at 65% 70%, rgba(55, 65, 81, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 20% 80%, rgba(107, 114, 128, 0.35) 0%, transparent 50%);
@@ -252,7 +254,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 40% 35%, rgba(244, 63, 94, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 60% 65%, rgba(251, 113, 133, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 30% 70%, rgba(252, 165, 165, 0.25) 0%, transparent 50%);
@@ -268,7 +270,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 30% 25%, rgba(16, 185, 129, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 70% 75%, rgba(52, 211, 153, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 45% 60%, rgba(110, 231, 183, 0.25) 0%, transparent 50%);
@@ -284,7 +286,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 40%, rgba(37, 99, 235, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 60%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 50% 80%, rgba(147, 197, 253, 0.25) 0%, transparent 50%);
@@ -300,7 +302,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 35% 45%, rgba(194, 65, 12, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 65% 25%, rgba(234, 88, 12, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 40% 75%, rgba(251, 146, 60, 0.25) 0%, transparent 50%);
@@ -391,63 +393,171 @@
 
         /* Keyframe Animations */
         @keyframes pulseBlue {
-            0%, 100% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 0.9; transform: scale(1.1); }
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.9;
+                transform: scale(1.1);
+            }
         }
 
         @keyframes pulseSunset {
-            0%, 100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
-            50% { opacity: 0.8; transform: scale(1.05) rotate(2deg); }
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05) rotate(2deg);
+            }
         }
 
         @keyframes pulseForest {
-            0%, 100% { opacity: 0.7; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.08); }
+
+            0%,
+            100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.08);
+            }
         }
 
         @keyframes pulsePurple {
-            0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
-            50% { opacity: 0.9; transform: scale(1.12) rotate(-1deg); }
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 0.9;
+                transform: scale(1.12) rotate(-1deg);
+            }
         }
 
         @keyframes pulseOcean {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.85; transform: scale(1.15); }
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.85;
+                transform: scale(1.15);
+            }
         }
 
         @keyframes pulseGold {
-            0%, 100% { opacity: 0.7; transform: scale(1) rotate(0deg); }
-            50% { opacity: 1; transform: scale(1.1) rotate(1deg); }
+
+            0%,
+            100% {
+                opacity: 0.7;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.1) rotate(1deg);
+            }
         }
 
         @keyframes pulsePlatinum {
-            0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
-            50% { opacity: 0.9; transform: scale(1.08) rotate(-0.5deg); }
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 0.9;
+                transform: scale(1.08) rotate(-0.5deg);
+            }
         }
 
         @keyframes pulseCharcoal {
-            0%, 100% { opacity: 0.8; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
+
+            0%,
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
         }
 
         @keyframes pulseRose {
-            0%, 100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
-            50% { opacity: 0.85; transform: scale(1.12) rotate(1.5deg); }
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 0.85;
+                transform: scale(1.12) rotate(1.5deg);
+            }
         }
 
         @keyframes pulseEmerald {
-            0%, 100% { opacity: 0.7; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.09); }
+
+            0%,
+            100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.09);
+            }
         }
 
         @keyframes pulseSapphire {
-            0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
-            50% { opacity: 0.9; transform: scale(1.1) rotate(-1deg); }
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 0.9;
+                transform: scale(1.1) rotate(-1deg);
+            }
         }
 
         @keyframes pulseCopper {
-            0%, 100% { opacity: 0.7; transform: scale(1) rotate(0deg); }
-            50% { opacity: 1; transform: scale(1.07) rotate(0.8deg); }
+
+            0%,
+            100% {
+                opacity: 0.7;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.07) rotate(0.8deg);
+            }
         }
 
         @keyframes floatParticles {
@@ -455,12 +565,15 @@
                 transform: translateY(100vh) translateX(0px);
                 opacity: 0;
             }
+
             10% {
                 opacity: 1;
             }
+
             90% {
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(-100px) translateX(100px);
                 opacity: 0;
@@ -675,6 +788,7 @@
                 text-shadow: 0 3px 12px rgba(29, 185, 84, 0.5);
                 box-shadow: 0 8px 32px rgba(29, 185, 84, 0.3), 0 0 20px rgba(29, 185, 84, 0.2);
             }
+
             100% {
                 text-shadow: 0 4px 16px rgba(29, 185, 84, 0.7);
                 box-shadow: 0 12px 40px rgba(29, 185, 84, 0.4), 0 0 30px rgba(29, 185, 84, 0.3);
@@ -1347,18 +1461,53 @@
             box-shadow: 0 0 20px rgba(29, 185, 84, 0.6);
         }
 
-        .theme-option.sweater { background: linear-gradient(135deg, #050a15 0%, #0d1a2f 100%); }
-        .theme-option.sunset { background: linear-gradient(135deg, #1a0a0f 0%, #2f1520 100%); }
-        .theme-option.forest { background: linear-gradient(135deg, #0a150a 0%, #152f15 100%); }
-        .theme-option.purple { background: linear-gradient(135deg, #150a1a 0%, #2f1540 100%); }
-        .theme-option.ocean { background: linear-gradient(135deg, #0a1520 0%, #153040 100%); }
-        .theme-option.gold { background: linear-gradient(135deg, #1a1510 0%, #2f2515 100%); }
-        .theme-option.platinum { background: linear-gradient(135deg, #0f0f0f 0%, #2a2a2a 100%); }
-        .theme-option.charcoal { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); }
-        .theme-option.rose { background: linear-gradient(135deg, #1a0f15 0%, #2f1525 100%); }
-        .theme-option.emerald { background: linear-gradient(135deg, #0f1a0f 0%, #1a2f1a 100%); }
-        .theme-option.sapphire { background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2f 100%); }
-        .theme-option.copper { background: linear-gradient(135deg, #1a1210 0%, #2f2015 100%); }
+        .theme-option.sweater {
+            background: linear-gradient(135deg, #050a15 0%, #0d1a2f 100%);
+        }
+
+        .theme-option.sunset {
+            background: linear-gradient(135deg, #1a0a0f 0%, #2f1520 100%);
+        }
+
+        .theme-option.forest {
+            background: linear-gradient(135deg, #0a150a 0%, #152f15 100%);
+        }
+
+        .theme-option.purple {
+            background: linear-gradient(135deg, #150a1a 0%, #2f1540 100%);
+        }
+
+        .theme-option.ocean {
+            background: linear-gradient(135deg, #0a1520 0%, #153040 100%);
+        }
+
+        .theme-option.gold {
+            background: linear-gradient(135deg, #1a1510 0%, #2f2515 100%);
+        }
+
+        .theme-option.platinum {
+            background: linear-gradient(135deg, #0f0f0f 0%, #2a2a2a 100%);
+        }
+
+        .theme-option.charcoal {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .theme-option.rose {
+            background: linear-gradient(135deg, #1a0f15 0%, #2f1525 100%);
+        }
+
+        .theme-option.emerald {
+            background: linear-gradient(135deg, #0f1a0f 0%, #1a2f1a 100%);
+        }
+
+        .theme-option.sapphire {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2f 100%);
+        }
+
+        .theme-option.copper {
+            background: linear-gradient(135deg, #1a1210 0%, #2f2015 100%);
+        }
 
         .add-music-btn {
             width: 100%;
@@ -1492,14 +1641,26 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Animations */
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
         }
 
         /* Empty State */
@@ -1656,6 +1817,7 @@
                     transform: translateX(100%);
                     opacity: 0;
                 }
+
                 to {
                     transform: translateX(0);
                     opacity: 1;
@@ -2054,184 +2216,213 @@
             }
         }
     </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- </head>
- <body class="theme-sweater"><!-- Particles Container -->
-  <div class="particles" id="particles"></div><!-- Mobile Menu Toggle --> <button class="mobile-menu-toggle" id="mobileMenuToggle"> <i class="fas fa-bars"></i> </button> <!-- App Container -->
-  <div class="app-container"><!-- Sidebar -->
-   <nav class="sidebar" id="sidebar">
-    <div class="logo"><i class="fas fa-headphones"></i> <span>MusicPlay</span>
-    </div>
-    <ul class="nav-menu">
-     <li class="nav-item">
-      <div class="nav-link active" data-tab="home"><i class="fas fa-home"></i> <span>Início</span>
-      </div></li>
-     <li class="nav-item">
-      <div class="nav-link" data-tab="search"><i class="fas fa-search"></i> <span>Buscar</span>
-      </div></li>
-     <li class="nav-item">
-      <div class="nav-link" data-tab="favorites"><i class="fas fa-heart"></i> <span>Favoritos</span>
-      </div></li>
-     <li class="nav-item">
-      <div class="nav-link" id="configLink"><i class="fas fa-cog"></i> <span>Configurações</span>
-      </div></li>
-    </ul>
-   </nav><!-- Main Content -->
-   <main class="main-content"><!-- Header -->
-    <header class="header">
-     <h1 class="welcome-title" id="welcomeTitle">Bem-vindo de volta</h1>
-     <div class="search-container"><i class="fas fa-search search-icon"></i> <input type="text" class="search-input" id="searchInput" placeholder="O que você quer ouvir?">
-     </div>
-    </header><!-- Home Tab -->
-    <div class="tab-content active" id="homeTab">
-     <div class="music-grid" id="musicGrid"><!-- Music cards will be populated here -->
-     </div>
-     <div class="empty-state" id="emptyState" style="display: none;"><i class="fas fa-music"></i>
-      <h3>Nenhuma música encontrada</h3>
-      <p>Adicione suas primeiras músicas nas configurações</p>
-     </div>
-    </div><!-- Search Tab -->
-    <div class="tab-content" id="searchTab">
-     <div class="music-grid" id="searchGrid"><!-- Search results will be populated here -->
-     </div>
-     <div class="empty-state" id="searchEmptyState" style="display: none;"><i class="fas fa-search"></i>
-      <h3>Nenhum resultado encontrado</h3>
-      <p>Tente buscar por outro termo</p>
-     </div>
-    </div><!-- Favorites Tab -->
-    <div class="tab-content" id="favoritesTab">
-     <div class="music-grid" id="favoritesGrid"><!-- Favorite music cards will be populated here -->
-     </div>
-     <div class="empty-state" id="favoritesEmptyState" style="display: none;"><i class="fas fa-heart"></i>
-      <h3>Nenhum favorito ainda</h3>
-      <p>Marque suas músicas favoritas com o coração</p>
-     </div>
-    </div>
-   </main><!-- Lyrics Sidebar -->
-   <div class="lyrics-sidebar" id="lyricsSidebar">
-    <div class="lyrics-header">
-     <h3 class="lyrics-title">Textos Românticos</h3><button class="close-lyrics-btn" id="closeLyricsBtn"> <i class="fas fa-times"></i> </button>
-    </div>
-    <div class="lyrics-content" id="lyricsContent">
-     <div class="lyric-line">
-      Selecione uma música para ver os textos românticos
-     </div>
-    </div>
-   </div>
-  </div><!-- Player -->
-  <div class="player">
-   <div class="player-left">
-    <div class="player-cover" id="playerCover"><i class="fas fa-music"></i>
-    </div>
-    <div class="player-info">
-     <div class="player-title" id="playerTitle">
-      Selecione uma música
-     </div>
-     <div class="player-artist" id="playerArtist">
-      Artista
-     </div>
-    </div>
-   </div>
-   <div class="player-center">
-    <div class="player-controls"><button class="control-btn" id="shuffleBtn"> <i class="fas fa-random"></i> </button> <button class="control-btn" id="prevBtn"> <i class="fas fa-step-backward"></i> </button> <button class="play-pause-btn" id="playPauseBtn"> <i class="fas fa-play"></i> </button> <button class="control-btn" id="nextBtn"> <i class="fas fa-step-forward"></i> </button> <button class="control-btn" id="repeatBtn"> <i class="fas fa-redo"></i> </button>
-    </div>
-    <div class="progress-container"><span class="progress-time" id="currentTime">0:00</span>
-     <div class="progress-bar" id="progressBar">
-      <div class="progress-fill" id="progressFill"></div>
-     </div><span class="progress-time" id="totalTime">0:00</span>
-    </div>
-   </div>
-   <div class="player-right"><button class="lyrics-toggle-btn" id="lyricsToggleBtn"> <i class="fas fa-quote-right"></i> </button>
-    <div class="volume-container"><button class="volume-btn" id="volumeBtn"> <i class="fas fa-volume-up"></i> </button>
-     <div class="volume-bar" id="volumeBar">
-      <div class="volume-fill" id="volumeFill"></div>
-     </div>
-    </div>
-   </div>
-  </div><!-- Password Modal -->
-  <div class="modal-overlay" id="passwordModal">
-   <div class="modal">
-    <div class="modal-icon"><i class="fas fa-lock"></i>
-    </div>
-    <h2 class="modal-title">Acesso às Configurações</h2>
-    <p class="modal-subtitle">Digite a senha para acessar as configurações</p><input type="password" class="password-input" id="passwordInput" placeholder="Digite a senha">
-    <div class="modal-buttons"><button class="modal-btn secondary" id="cancelBtn">Cancelar</button> <button class="modal-btn primary" id="enterBtn">Entrar</button>
-    </div>
-   </div>
-  </div><!-- Management Panel -->
-  <div class="management-panel" id="managementPanel">
-   <div class="panel-header">
-    <h2 class="panel-title">Configurações</h2><button class="close-panel-btn" id="closePanelBtn"> <i class="fas fa-times"></i> </button>
-   </div>
-   <div class="panel-content"><!-- File Upload Area -->
-    <div class="file-upload-area" id="fileUploadArea"><i class="fas fa-cloud-upload-alt"></i>
-     <h3>Adicione suas músicas MP3</h3>
-     <p>Arraste arquivos aqui ou clique para selecionar do seu dispositivo</p>
-     <p style="font-size: 12px; color: #b3b3b3; margin-top: 8px;">Suporta: MP3, WAV, M4A e outros formatos de áudio</p><input type="file" class="file-input" id="fileInput" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg" multiple>
-    </div><!-- Add Music Form -->
-    <form id="addMusicForm">
-     <div class="form-group"><label class="form-label">URL da Música</label> <input type="url" class="form-input" id="musicUrl" placeholder="Cole o link do YouTube ou URL do MP3">
-     </div>
-     <div class="form-group"><label class="form-label">Nome da Música</label> <input type="text" class="form-input" id="musicTitle" placeholder="Digite o nome da música" required>
-     </div>
-     <div class="form-group"><label class="form-label">Nome do Artista</label> <input type="text" class="form-input" id="musicArtist" placeholder="Digite o nome do artista" required>
-     </div>
-     <div class="form-group"><label class="form-label">Ícone</label>
-      <div class="icon-grid" id="iconGrid">
-       <div class="icon-option selected" data-icon="fas fa-music"><i class="fas fa-music"></i>
-       </div>
-       <div class="icon-option" data-icon="fas fa-guitar"><i class="fas fa-guitar"></i>
-       </div>
-       <div class="icon-option" data-icon="fas fa-drum"><i class="fas fa-drum"></i>
-       </div>
-       <div class="icon-option" data-icon="fas fa-microphone"><i class="fas fa-microphone"></i>
-       </div>
-       <div class="icon-option" data-icon="fas fa-headphones"><i class="fas fa-headphones"></i>
-       </div>
-       <div class="icon-option" data-icon="fas fa-compact-disc"><i class="fas fa-compact-disc"></i>
-       </div>
-       <div class="icon-option" data-icon="fas fa-record-vinyl"><i class="fas fa-record-vinyl"></i>
-       </div>
-       <div class="icon-option" data-icon="fas fa-heart"><i class="fas fa-heart"></i>
-       </div>
-       <div class="icon-option" data-icon="fas fa-star"><i class="fas fa-star"></i>
-       </div>
-       <div class="icon-option" data-icon="fas fa-fire"><i class="fas fa-fire"></i>
-       </div>
-      </div>
-     </div>
-     <div class="form-group"><label class="form-label">Tema de Fundo</label>
-      <div class="theme-grid" id="themeGrid">
-       <div class="theme-option selected sweater" data-theme="sweater"></div>
-       <div class="theme-option sunset" data-theme="sunset"></div>
-       <div class="theme-option forest" data-theme="forest"></div>
-       <div class="theme-option purple" data-theme="purple"></div>
-       <div class="theme-option ocean" data-theme="ocean"></div>
-       <div class="theme-option gold" data-theme="gold"></div>
-       <div class="theme-option platinum" data-theme="platinum"></div>
-       <div class="theme-option charcoal" data-theme="charcoal"></div>
-       <div class="theme-option rose" data-theme="rose"></div>
-       <div class="theme-option emerald" data-theme="emerald"></div>
-       <div class="theme-option sapphire" data-theme="sapphire"></div>
-       <div class="theme-option copper" data-theme="copper"></div>
-      </div>
-     </div>
-     <div class="form-group"><label class="form-label">Textos Românticos (um por linha)</label> <textarea class="form-textarea" id="musicLyrics" placeholder="Digite seus textos românticos aqui...
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+</head>
+
+<body class="theme-sweater"><!-- Particles Container -->
+    <div class="particles" id="particles"></div><!-- Mobile Menu Toggle --> <button class="mobile-menu-toggle"
+        id="mobileMenuToggle"> <i class="fas fa-bars"></i> </button> <!-- App Container -->
+    <div class="app-container"><!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="logo"><i class="fas fa-headphones"></i> <span>MusicPlay</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <div class="nav-link active" data-tab="home"><i class="fas fa-home"></i> <span>Início</span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" data-tab="search"><i class="fas fa-search"></i> <span>Buscar</span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" data-tab="favorites"><i class="fas fa-heart"></i> <span>Favoritos</span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" id="configLink"><i class="fas fa-cog"></i> <span>Configurações</span>
+                    </div>
+                </li>
+            </ul>
+        </nav><!-- Main Content -->
+        <main class="main-content"><!-- Header -->
+            <header class="header">
+                <h1 class="welcome-title" id="welcomeTitle">Bem-vindo de volta</h1>
+                <div class="search-container"><i class="fas fa-search search-icon"></i> <input type="text"
+                        class="search-input" id="searchInput" placeholder="O que você quer ouvir?">
+                </div>
+            </header><!-- Home Tab -->
+            <div class="tab-content active" id="homeTab">
+                <div class="music-grid" id="musicGrid"><!-- Music cards will be populated here -->
+                </div>
+                <div class="empty-state" id="emptyState" style="display: none;"><i class="fas fa-music"></i>
+                    <h3>Nenhuma música encontrada</h3>
+                    <p>Adicione suas primeiras músicas nas configurações</p>
+                </div>
+            </div><!-- Search Tab -->
+            <div class="tab-content" id="searchTab">
+                <div class="music-grid" id="searchGrid"><!-- Search results will be populated here -->
+                </div>
+                <div class="empty-state" id="searchEmptyState" style="display: none;"><i class="fas fa-search"></i>
+                    <h3>Nenhum resultado encontrado</h3>
+                    <p>Tente buscar por outro termo</p>
+                </div>
+            </div><!-- Favorites Tab -->
+            <div class="tab-content" id="favoritesTab">
+                <div class="music-grid" id="favoritesGrid"><!-- Favorite music cards will be populated here -->
+                </div>
+                <div class="empty-state" id="favoritesEmptyState" style="display: none;"><i class="fas fa-heart"></i>
+                    <h3>Nenhum favorito ainda</h3>
+                    <p>Marque suas músicas favoritas com o coração</p>
+                </div>
+            </div>
+        </main><!-- Lyrics Sidebar -->
+        <div class="lyrics-sidebar" id="lyricsSidebar">
+            <div class="lyrics-header">
+                <h3 class="lyrics-title">Textos Românticos</h3><button class="close-lyrics-btn" id="closeLyricsBtn"> <i
+                        class="fas fa-times"></i> </button>
+            </div>
+            <div class="lyrics-content" id="lyricsContent">
+                <div class="lyric-line">
+                    Selecione uma música para ver os textos românticos
+                </div>
+            </div>
+        </div>
+    </div><!-- Player -->
+    <div class="player">
+        <div class="player-left">
+            <div class="player-cover" id="playerCover"><i class="fas fa-music"></i>
+            </div>
+            <div class="player-info">
+                <div class="player-title" id="playerTitle">
+                    Selecione uma música
+                </div>
+                <div class="player-artist" id="playerArtist">
+                    Artista
+                </div>
+            </div>
+        </div>
+        <div class="player-center">
+            <div class="player-controls"><button class="control-btn" id="shuffleBtn"> <i class="fas fa-random"></i>
+                </button> <button class="control-btn" id="prevBtn"> <i class="fas fa-step-backward"></i> </button>
+                <button class="play-pause-btn" id="playPauseBtn"> <i class="fas fa-play"></i> </button> <button
+                    class="control-btn" id="nextBtn"> <i class="fas fa-step-forward"></i> </button> <button
+                    class="control-btn" id="repeatBtn"> <i class="fas fa-redo"></i> </button>
+            </div>
+            <div class="progress-container"><span class="progress-time" id="currentTime">0:00</span>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div><span class="progress-time" id="totalTime">0:00</span>
+            </div>
+        </div>
+        <div class="player-right"><button class="lyrics-toggle-btn" id="lyricsToggleBtn"> <i
+                    class="fas fa-quote-right"></i> </button>
+            <div class="volume-container"><button class="volume-btn" id="volumeBtn"> <i class="fas fa-volume-up"></i>
+                </button>
+                <div class="volume-bar" id="volumeBar">
+                    <div class="volume-fill" id="volumeFill"></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- Password Modal -->
+    <div class="modal-overlay" id="passwordModal">
+        <div class="modal">
+            <div class="modal-icon"><i class="fas fa-lock"></i>
+            </div>
+            <h2 class="modal-title">Acesso às Configurações</h2>
+            <p class="modal-subtitle">Digite a senha para acessar as configurações</p><input type="password"
+                class="password-input" id="passwordInput" placeholder="Digite a senha">
+            <div class="modal-buttons"><button class="modal-btn secondary" id="cancelBtn">Cancelar</button> <button
+                    class="modal-btn primary" id="enterBtn">Entrar</button>
+            </div>
+        </div>
+    </div><!-- Management Panel -->
+    <div class="management-panel" id="managementPanel">
+        <div class="panel-header">
+            <h2 class="panel-title">Configurações</h2><button class="close-panel-btn" id="closePanelBtn"> <i
+                    class="fas fa-times"></i> </button>
+        </div>
+        <div class="panel-content"><!-- File Upload Area -->
+            <div class="file-upload-area" id="fileUploadArea"><i class="fas fa-cloud-upload-alt"></i>
+                <h3>Adicione suas músicas MP3</h3>
+                <p>Arraste arquivos aqui ou clique para selecionar do seu dispositivo</p>
+                <p style="font-size: 12px; color: #b3b3b3; margin-top: 8px;">Suporta: MP3, WAV, M4A e outros formatos de
+                    áudio</p><input type="file" class="file-input" id="fileInput"
+                    accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg" multiple>
+            </div><!-- Add Music Form -->
+            <form id="addMusicForm">
+                <div class="form-group"><label class="form-label">URL da Música</label> <input type="url"
+                        class="form-input" id="musicUrl" placeholder="Cole o link do YouTube ou URL do MP3">
+                </div>
+                <div class="form-group"><label class="form-label">Nome da Música</label> <input type="text"
+                        class="form-input" id="musicTitle" placeholder="Digite o nome da música" required>
+                </div>
+                <div class="form-group"><label class="form-label">Nome do Artista</label> <input type="text"
+                        class="form-input" id="musicArtist" placeholder="Digite o nome do artista" required>
+                </div>
+                <div class="form-group"><label class="form-label">Ícone</label>
+                    <div class="icon-grid" id="iconGrid">
+                        <div class="icon-option selected" data-icon="fas fa-music"><i class="fas fa-music"></i>
+                        </div>
+                        <div class="icon-option" data-icon="fas fa-guitar"><i class="fas fa-guitar"></i>
+                        </div>
+                        <div class="icon-option" data-icon="fas fa-drum"><i class="fas fa-drum"></i>
+                        </div>
+                        <div class="icon-option" data-icon="fas fa-microphone"><i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="icon-option" data-icon="fas fa-headphones"><i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="icon-option" data-icon="fas fa-compact-disc"><i class="fas fa-compact-disc"></i>
+                        </div>
+                        <div class="icon-option" data-icon="fas fa-record-vinyl"><i class="fas fa-record-vinyl"></i>
+                        </div>
+                        <div class="icon-option" data-icon="fas fa-heart"><i class="fas fa-heart"></i>
+                        </div>
+                        <div class="icon-option" data-icon="fas fa-star"><i class="fas fa-star"></i>
+                        </div>
+                        <div class="icon-option" data-icon="fas fa-fire"><i class="fas fa-fire"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group"><label class="form-label">Tema de Fundo</label>
+                    <div class="theme-grid" id="themeGrid">
+                        <div class="theme-option selected sweater" data-theme="sweater"></div>
+                        <div class="theme-option sunset" data-theme="sunset"></div>
+                        <div class="theme-option forest" data-theme="forest"></div>
+                        <div class="theme-option purple" data-theme="purple"></div>
+                        <div class="theme-option ocean" data-theme="ocean"></div>
+                        <div class="theme-option gold" data-theme="gold"></div>
+                        <div class="theme-option platinum" data-theme="platinum"></div>
+                        <div class="theme-option charcoal" data-theme="charcoal"></div>
+                        <div class="theme-option rose" data-theme="rose"></div>
+                        <div class="theme-option emerald" data-theme="emerald"></div>
+                        <div class="theme-option sapphire" data-theme="sapphire"></div>
+                        <div class="theme-option copper" data-theme="copper"></div>
+                    </div>
+                </div>
+                <div class="form-group"><label class="form-label">Textos Românticos (um por linha)</label> <textarea
+                        class="form-textarea" id="musicLyrics" placeholder="Digite seus textos românticos aqui...
 Um texto por linha"></textarea>
-     </div><button type="submit" class="add-music-btn" id="addMusicBtn"> <span class="btn-text">Adicionar Música</span> </button>
-    </form><!-- Music List -->
-    <div class="music-list">
-     <h3 style="margin-bottom: 16px; color: #ffffff;">Músicas Adicionadas</h3>
-     <div id="musicList"><!-- Added music items will appear here -->
-     </div>
-    </div>
-   </div>
-  </div><!-- Toast Notification -->
-  <div class="toast" id="toast"></div><!-- Hidden Audio Element -->
-  <audio id="audioPlayer" preload="metadata"></audio><!-- YouTube Player (Hidden) -->
-  <div id="youtubePlayer" style="position: fixed; top: -100px; left: -100px; width: 1px; height: 1px; pointer-events: none;"></div>
-  <script>
+                </div><button type="submit" class="add-music-btn" id="addMusicBtn"> <span class="btn-text">Adicionar
+                        Música</span> </button>
+            </form><!-- Music List -->
+            <div class="music-list">
+                <h3 style="margin-bottom: 16px; color: #ffffff;">Músicas Adicionadas</h3>
+                <div id="musicList"><!-- Added music items will appear here -->
+                </div>
+            </div>
+        </div>
+    </div><!-- Toast Notification -->
+    <div class="toast" id="toast"></div><!-- Hidden Audio Element -->
+    <audio id="audioPlayer" preload="metadata"></audio><!-- YouTube Player (Hidden) -->
+    <div id="youtubePlayer"
+        style="position: fixed; top: -100px; left: -100px; width: 1px; height: 1px; pointer-events: none;"></div>
+    <script>
         // Configuration
         const defaultConfig = {
             welcome_title: "Bem-vindo ao DengoPlay",
@@ -2269,7 +2460,7 @@ Um texto por linha"></textarea>
             if (window.firebaseConnected && window.firebaseDB) {
                 try {
                     musicRef = window.firebaseRef(window.firebaseDB, 'music');
-                    
+
                     // Listen to Firebase changes
                     window.firebaseOnValue(musicRef, (snapshot) => {
                         const data = snapshot.val();
@@ -2277,7 +2468,7 @@ Um texto por linha"></textarea>
                             __backendId: key,
                             ...data[key]
                         })) : [];
-                        
+
                         allMusic = musicArray;
                         updateAllGrids();
                         updateMusicList();
@@ -2285,7 +2476,7 @@ Um texto por linha"></textarea>
                         console.error('Firebase error:', error);
                         showToast('Erro de conexão com Firebase', 'error');
                     });
-                    
+
                     firebaseInitialized = true;
                     showToast('Firebase conectado com sucesso!');
                 } catch (error) {
@@ -2352,7 +2543,7 @@ Um texto por linha"></textarea>
         }
 
         // YouTube API Ready Callback
-        window.onYouTubeIframeAPIReady = function() {
+        window.onYouTubeIframeAPIReady = function () {
             youtubePlayer = new YT.Player('youtubePlayer', {
                 height: '1',
                 width: '1',
@@ -2365,7 +2556,7 @@ Um texto por linha"></textarea>
                     'rel': 0
                 },
                 events: {
-                    'onReady': function() {
+                    'onReady': function () {
                         isYouTubeReady = true;
                     },
                     'onStateChange': onYouTubePlayerStateChange
@@ -2404,10 +2595,28 @@ Um texto por linha"></textarea>
         }
 
         function extractYouTubeId(url) {
-            const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
-            const match = url.match(regex);
-            return match ? match[1] : null;
+            try {
+                // Shorts
+                if (url.includes("shorts/")) {
+                    return url.split("shorts/")[1].split("?")[0].substring(0, 11);
+                }
+
+                // youtu.be
+                if (url.includes("youtu.be/")) {
+                    return url.split("youtu.be/")[1].split("?")[0].substring(0, 11);
+                }
+
+                // watch?v=
+                if (url.includes("v=")) {
+                    return url.split("v=")[1].split("&")[0].substring(0, 11);
+                }
+
+                return null;
+            } catch {
+                return null;
+            }
         }
+
 
         async function getYouTubeMetadata(videoId) {
             try {
@@ -2438,13 +2647,13 @@ Um texto por linha"></textarea>
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             particlesContainer.innerHTML = '';
-            
+
             for (let i = 0; i < 50; i++) {
                 setTimeout(() => {
                     createParticle();
                 }, i * 100);
             }
-            
+
             setInterval(createParticle, 800);
         }
 
@@ -2454,9 +2663,9 @@ Um texto por linha"></textarea>
             particle.style.left = Math.random() * 100 + '%';
             particle.style.animationDelay = Math.random() * 2 + 's';
             particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            
+
             document.getElementById('particles').appendChild(particle);
-            
+
             setTimeout(() => {
                 if (particle.parentNode) {
                     particle.parentNode.removeChild(particle);
@@ -2483,7 +2692,7 @@ Um texto por linha"></textarea>
         }
 
         function updateCurrentGrid() {
-            switch(currentTab) {
+            switch (currentTab) {
                 case 'home':
                     filteredMusic = allMusic;
                     renderMusicGrid(musicGrid, filteredMusic, emptyState);
@@ -2517,7 +2726,7 @@ Um texto por linha"></textarea>
             if (!searchQuery) {
                 searchResults = [];
             } else {
-                searchResults = allMusic.filter(music => 
+                searchResults = allMusic.filter(music =>
                     music.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                     music.artist.toLowerCase().includes(searchQuery.toLowerCase())
                 );
@@ -2528,14 +2737,14 @@ Um texto por linha"></textarea>
         // Music Management - Firebase Only
         async function addMusic(musicData) {
             if (isLoading) return;
-            
+
             if (!firebaseInitialized || !musicRef) {
                 showToast('Firebase não conectado', 'error');
                 return;
             }
-            
+
             setLoading(true);
-            
+
             try {
                 const music = {
                     id: generateId(),
@@ -2557,14 +2766,14 @@ Um texto por linha"></textarea>
 
         async function removeMusic(id) {
             if (isLoading) return;
-            
+
             if (!firebaseInitialized || !musicRef) {
                 showToast('Firebase não conectado', 'error');
                 return;
             }
-            
+
             setLoading(true);
-            
+
             try {
                 const music = allMusic.find(m => m.id === id || m.__backendId === id);
                 if (!music) return;
@@ -2588,12 +2797,12 @@ Um texto por linha"></textarea>
 
         async function toggleFavorite(id) {
             if (isLoading) return;
-            
+
             if (!firebaseInitialized || !musicRef) {
                 showToast('Firebase não conectado', 'error');
                 return;
             }
-            
+
             try {
                 const music = allMusic.find(m => m.id === id || m.__backendId === id);
                 if (!music) return;
@@ -2602,7 +2811,7 @@ Um texto por linha"></textarea>
 
                 const musicToUpdateRef = window.firebaseRef(window.firebaseDB, `music/${music.__backendId || music.id}`);
                 await window.firebaseSet(musicToUpdateRef, updatedMusic);
-                
+
                 const action = updatedMusic.isFavorite ? 'adicionada aos' : 'removida dos';
                 showToast(`Música ${action} favoritos no Firebase!`);
             } catch (error) {
@@ -2614,7 +2823,7 @@ Um texto por linha"></textarea>
         function setLoading(loading) {
             isLoading = loading;
             const btnText = addMusicBtn.querySelector('.btn-text');
-            
+
             if (loading) {
                 btnText.innerHTML = '<span class="loading-spinner"></span> Adicionando...';
                 addMusicBtn.disabled = true;
@@ -2648,14 +2857,14 @@ Um texto por linha"></textarea>
 
         function renderMusicGrid(container, musicArray, emptyStateEl) {
             container.innerHTML = '';
-            
+
             if (musicArray.length === 0) {
                 emptyStateEl.style.display = 'block';
                 return;
             }
-            
+
             emptyStateEl.style.display = 'none';
-            
+
             musicArray.forEach(music => {
                 const card = document.createElement('div');
                 card.className = `music-card ${music.isFavorite ? 'favorite' : ''}`;
@@ -2681,11 +2890,11 @@ Um texto por linha"></textarea>
         function playMusic(id) {
             const music = allMusic.find(m => m.id === id || m.__backendId === id);
             if (!music) return;
-            
+
             currentSong = music;
-            
+
             // Set current playlist based on active tab
-            switch(currentTab) {
+            switch (currentTab) {
                 case 'home':
                     currentPlaylist = filteredMusic;
                     break;
@@ -2698,25 +2907,25 @@ Um texto por linha"></textarea>
                 default:
                     currentPlaylist = allMusic;
             }
-            
+
             currentIndex = currentPlaylist.findIndex(m => m.id === id);
-            
+
             // Change theme
             changeTheme(music.theme);
-            
+
             // Update player info
             playerTitle.textContent = music.title;
             playerArtist.textContent = music.artist;
             playerCover.innerHTML = `<i class="${music.icon}"></i>`;
-            
+
             // Parse lyrics
             currentLyrics = parseLyrics(music.lyrics || '');
             updateLyricsDisplay();
-            
+
             // Auto-open lyrics
             lyricsSidebar.classList.add('show');
             lyricsToggleBtn.classList.add('active');
-            
+
             // Play audio
             if (extractYouTubeId(music.url)) {
                 playYouTubeAudio(music.url);
@@ -2744,13 +2953,13 @@ Um texto por linha"></textarea>
                 showToast('Player do YouTube ainda não está pronto', 'error');
                 return;
             }
-            
+
             const videoId = extractYouTubeId(url);
             if (!videoId) {
                 showToast('URL do YouTube inválida', 'error');
                 return;
             }
-            
+
             currentAudioType = 'youtube';
             audioPlayer.pause();
             youtubePlayer.loadVideoById(videoId);
@@ -2775,32 +2984,32 @@ Um texto por linha"></textarea>
 
         function nextSong() {
             if (currentPlaylist.length === 0) return;
-            
+
             if (isRepeating && currentSong) {
                 playMusic(currentSong.id);
                 return;
             }
-            
+
             let nextIndex;
             if (isShuffled) {
                 nextIndex = Math.floor(Math.random() * currentPlaylist.length);
             } else {
                 nextIndex = (currentIndex + 1) % currentPlaylist.length;
             }
-            
+
             playMusic(currentPlaylist[nextIndex].id);
         }
 
         function prevSong() {
             if (currentPlaylist.length === 0) return;
-            
+
             let prevIndex;
             if (isShuffled) {
                 prevIndex = Math.floor(Math.random() * currentPlaylist.length);
             } else {
                 prevIndex = currentIndex === 0 ? currentPlaylist.length - 1 : currentIndex - 1;
             }
-            
+
             playMusic(currentPlaylist[prevIndex].id);
         }
 
@@ -2817,13 +3026,13 @@ Um texto por linha"></textarea>
         function setVolume(volume) {
             currentVolume = volume;
             audioPlayer.volume = volume;
-            
+
             if (isYouTubeReady && youtubePlayer.setVolume) {
                 youtubePlayer.setVolume(volume * 100);
             }
-            
+
             volumeFill.style.width = (volume * 100) + '%';
-            
+
             const volumeIcon = volumeBtn.querySelector('i');
             if (volume === 0) {
                 volumeIcon.className = 'fas fa-volume-mute';
@@ -2847,19 +3056,19 @@ Um texto por linha"></textarea>
         // Lyrics Functions
         function parseLyrics(lyricsText) {
             if (!lyricsText) return [];
-            
+
             const lines = lyricsText.split('\n').filter(line => line.trim());
             return lines.map(line => line.trim());
         }
 
         function updateLyricsDisplay() {
             lyricsContent.innerHTML = '';
-            
+
             if (currentLyrics.length === 0) {
                 lyricsContent.innerHTML = '<div class="lyric-line">Nenhum texto romântico disponível</div>';
                 return;
             }
-            
+
             currentLyrics.forEach((lyric, index) => {
                 const line = document.createElement('div');
                 line.className = 'lyric-line';
@@ -2874,11 +3083,11 @@ Um texto por linha"></textarea>
 
         function startLyrics() {
             if (currentLyrics.length === 0) return;
-            
+
             stopLyrics();
             currentLyricIndex = -1;
             lyricStartTime = Date.now();
-            
+
             // Update lyrics with higher frequency for ultra-smooth transitions
             lyricsInterval = setInterval(updateCurrentLyric, 50);
             // Initial update
@@ -2890,9 +3099,9 @@ Um texto por linha"></textarea>
                 clearInterval(lyricsInterval);
                 lyricsInterval = null;
             }
-            
+
             currentLyricIndex = -1;
-            
+
             // Reset all lyrics to hidden state with smooth transition
             document.querySelectorAll('.lyric-line').forEach(line => {
                 line.classList.remove('current', 'passed', 'next');
@@ -2902,7 +3111,7 @@ Um texto por linha"></textarea>
         function updateCurrentLyric() {
             let currentTime;
             let totalDuration;
-            
+
             if (currentAudioType === 'html5') {
                 currentTime = audioPlayer.currentTime;
                 totalDuration = audioPlayer.duration;
@@ -2912,30 +3121,30 @@ Um texto por linha"></textarea>
             } else {
                 return;
             }
-            
+
             if (!totalDuration || currentLyrics.length === 0 || totalDuration < 1) return;
-            
+
             // More precise calculation with buffer time for smoother transitions
             const timePerLyric = totalDuration / currentLyrics.length;
             const newLyricIndex = Math.floor(currentTime / timePerLyric);
-            
+
             // Only update if the lyric index actually changed
             if (newLyricIndex !== currentLyricIndex && newLyricIndex >= 0 && newLyricIndex < currentLyrics.length) {
                 currentLyricIndex = newLyricIndex;
-                
+
                 // Batch DOM updates for better performance
                 requestAnimationFrame(() => {
                     const lines = document.querySelectorAll('.lyric-line');
-                    
+
                     lines.forEach((line, index) => {
                         // Remove all classes first
                         line.classList.remove('current', 'passed', 'next');
-                        
+
                         if (index === currentLyricIndex) {
                             line.classList.add('current');
                             // Smooth scroll to current lyric
-                            line.scrollIntoView({ 
-                                behavior: 'smooth', 
+                            line.scrollIntoView({
+                                behavior: 'smooth',
                                 block: 'center',
                                 inline: 'nearest'
                             });
@@ -2951,7 +3160,7 @@ Um texto por linha"></textarea>
 
         function toggleLyrics() {
             const isVisible = lyricsSidebar.classList.contains('show');
-            
+
             if (isVisible) {
                 lyricsSidebar.classList.remove('show');
                 lyricsToggleBtn.classList.remove('active');
@@ -2968,9 +3177,9 @@ Um texto por linha"></textarea>
                 if (file.type.startsWith('audio/') || file.name.toLowerCase().endsWith('.mp3')) {
                     const id = generateId();
                     const url = URL.createObjectURL(file);
-                    
+
                     uploadedFiles.set(id, url);
-                    
+
                     // Get audio duration
                     let duration = 0;
                     try {
@@ -2985,19 +3194,19 @@ Um texto por linha"></textarea>
                     } catch (error) {
                         console.warn('Could not get audio duration:', error);
                     }
-                    
+
                     const fileName = file.name.replace(/\.[^/.]+$/, "");
-                    
+
                     // Fill the form instead of adding directly
                     document.getElementById('musicUrl').value = url;
                     document.getElementById('musicTitle').value = fileName;
                     document.getElementById('musicArtist').value = 'Música Local';
                     document.getElementById('musicLyrics').value = '';
-                    
+
                     // Store the file data for later use
                     document.getElementById('musicUrl').dataset.fileId = id;
                     document.getElementById('musicUrl').dataset.duration = Math.round(duration);
-                    
+
                     showToast(`"${fileName}" carregado! Personalize e clique em "Adicionar Música"`);
                 } else {
                     showToast(`"${file.name}" não é um arquivo de áudio válido`, 'error');
@@ -3006,7 +3215,7 @@ Um texto por linha"></textarea>
         }
 
         // Event Listeners
-        document.addEventListener('DOMContentLoaded', async function() {
+        document.addEventListener('DOMContentLoaded', async function () {
             // Initialize Firebase only
             setTimeout(() => {
                 initializeFirebase();
@@ -3015,7 +3224,7 @@ Um texto por linha"></textarea>
             // Initialize
             loadYouTubeAPI();
             createParticles();
-            
+
             // Player controls
             playPauseBtn.addEventListener('click', togglePlayPause);
             nextBtn.addEventListener('click', nextSong);
@@ -3024,12 +3233,12 @@ Um texto por linha"></textarea>
             repeatBtn.addEventListener('click', toggleRepeat);
             volumeBtn.addEventListener('click', toggleMute);
             lyricsToggleBtn.addEventListener('click', toggleLyrics);
-            
+
             // Progress bar
             progressBar.addEventListener('click', (e) => {
                 const rect = progressBar.getBoundingClientRect();
                 const percent = (e.clientX - rect.left) / rect.width;
-                
+
                 if (currentAudioType === 'html5') {
                     audioPlayer.currentTime = percent * audioPlayer.duration;
                 } else if (currentAudioType === 'youtube' && isYouTubeReady) {
@@ -3037,34 +3246,34 @@ Um texto por linha"></textarea>
                     youtubePlayer.seekTo(percent * duration);
                 }
             });
-            
+
             // Volume bar
             volumeBar.addEventListener('click', (e) => {
                 const rect = volumeBar.getBoundingClientRect();
                 const percent = (e.clientX - rect.left) / rect.width;
                 setVolume(Math.max(0, Math.min(1, percent)));
             });
-            
+
             // Audio events
             audioPlayer.addEventListener('play', () => {
                 isPlaying = true;
                 playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
                 startLyrics();
             });
-            
+
             audioPlayer.addEventListener('pause', () => {
                 isPlaying = false;
                 playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
                 stopLyrics();
             });
-            
+
             audioPlayer.addEventListener('ended', nextSong);
-            
+
             audioPlayer.addEventListener('timeupdate', () => {
                 if (currentAudioType === 'html5') {
                     const current = audioPlayer.currentTime;
                     const duration = audioPlayer.duration;
-                    
+
                     if (duration) {
                         progressFill.style.width = (current / duration * 100) + '%';
                         currentTimeEl.textContent = formatTime(current);
@@ -3072,13 +3281,13 @@ Um texto por linha"></textarea>
                     }
                 }
             });
-            
+
             // YouTube progress update
             setInterval(() => {
                 if (currentAudioType === 'youtube' && isYouTubeReady && isPlaying) {
                     const current = youtubePlayer.getCurrentTime();
                     const duration = youtubePlayer.getDuration();
-                    
+
                     if (duration) {
                         progressFill.style.width = (current / duration * 100) + '%';
                         currentTimeEl.textContent = formatTime(current);
@@ -3086,7 +3295,7 @@ Um texto por linha"></textarea>
                     }
                 }
             }, 1000);
-            
+
             // Search
             searchInput.addEventListener('input', (e) => {
                 searchQuery = e.target.value;
@@ -3094,7 +3303,7 @@ Um texto por linha"></textarea>
                     performSearch();
                 }
             });
-            
+
             // Tab navigation
             document.querySelectorAll('[data-tab]').forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -3103,34 +3312,34 @@ Um texto por linha"></textarea>
                     switchTab(tabName);
                 });
             });
-            
+
             // Mobile menu
             mobileMenuToggle.addEventListener('click', () => {
                 sidebar.classList.toggle('show');
             });
-            
+
             // Close sidebar when clicking outside on mobile
             document.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768 && 
-                    !sidebar.contains(e.target) && 
+                if (window.innerWidth <= 768 &&
+                    !sidebar.contains(e.target) &&
                     !mobileMenuToggle.contains(e.target)) {
                     sidebar.classList.remove('show');
                 }
             });
-            
+
             // Config link
             document.getElementById('configLink').addEventListener('click', (e) => {
                 e.preventDefault();
                 passwordModal.classList.add('show');
                 passwordInput.focus();
             });
-            
+
             // Password modal
             document.getElementById('cancelBtn').addEventListener('click', () => {
                 passwordModal.classList.remove('show');
                 passwordInput.value = '';
             });
-            
+
             document.getElementById('enterBtn').addEventListener('click', () => {
                 if (passwordInput.value === 'admin123') {
                     passwordModal.classList.remove('show');
@@ -3142,23 +3351,23 @@ Um texto por linha"></textarea>
                     showToast('Senha incorreta', 'error');
                 }
             });
-            
+
             passwordInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                     document.getElementById('enterBtn').click();
                 }
             });
-            
+
             // Close panels
             document.getElementById('closePanelBtn').addEventListener('click', () => {
                 managementPanel.classList.remove('show');
             });
-            
+
             document.getElementById('closeLyricsBtn').addEventListener('click', () => {
                 lyricsSidebar.classList.remove('show');
                 lyricsToggleBtn.classList.remove('active');
             });
-            
+
             // Icon selection
             document.querySelectorAll('.icon-option').forEach(option => {
                 option.addEventListener('click', () => {
@@ -3166,7 +3375,7 @@ Um texto por linha"></textarea>
                     option.classList.add('selected');
                 });
             });
-            
+
             // Theme selection
             document.querySelectorAll('.theme-option').forEach(option => {
                 option.addEventListener('click', () => {
@@ -3174,49 +3383,49 @@ Um texto por linha"></textarea>
                     option.classList.add('selected');
                 });
             });
-            
+
             // File upload
             fileUploadArea.addEventListener('click', () => {
                 fileInput.click();
             });
-            
+
             fileUploadArea.addEventListener('dragover', (e) => {
                 e.preventDefault();
                 fileUploadArea.classList.add('dragover');
             });
-            
+
             fileUploadArea.addEventListener('dragleave', () => {
                 fileUploadArea.classList.remove('dragover');
             });
-            
+
             fileUploadArea.addEventListener('drop', (e) => {
                 e.preventDefault();
                 fileUploadArea.classList.remove('dragover');
                 handleFileUpload(e.dataTransfer.files);
             });
-            
+
             fileInput.addEventListener('change', (e) => {
                 handleFileUpload(e.target.files);
                 e.target.value = '';
             });
-            
+
             // Add music form
             addMusicForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                
+
                 const urlInput = document.getElementById('musicUrl');
                 const url = urlInput.value;
                 const title = document.getElementById('musicTitle').value;
                 const artist = document.getElementById('musicArtist').value;
                 const lyrics = document.getElementById('musicLyrics').value;
-                
+
                 const selectedIcon = document.querySelector('.icon-option.selected').dataset.icon;
                 const selectedTheme = document.querySelector('.theme-option.selected').dataset.theme;
-                
+
                 // Check if it's a file upload
                 const fileId = urlInput.dataset.fileId;
                 const fileDuration = urlInput.dataset.duration || 0;
-                
+
                 const musicData = {
                     url,
                     title,
@@ -3226,35 +3435,35 @@ Um texto por linha"></textarea>
                     lyrics,
                     duration: parseInt(fileDuration) || 0
                 };
-                
+
                 // If it's a file upload, add the file ID
                 if (fileId) {
                     musicData.id = fileId;
                 }
-                
+
                 await addMusic(musicData);
                 addMusicForm.reset();
-                
+
                 // Clear file data
                 urlInput.removeAttribute('data-file-id');
                 urlInput.removeAttribute('data-duration');
-                
+
                 // Reset selections
                 document.querySelectorAll('.icon-option').forEach(o => o.classList.remove('selected'));
                 document.querySelector('.icon-option[data-icon="fas fa-music"]').classList.add('selected');
                 document.querySelectorAll('.theme-option').forEach(o => o.classList.remove('selected'));
                 document.querySelector('.theme-option.sweater').classList.add('selected');
             });
-            
+
             // Auto-fill YouTube metadata
             document.getElementById('musicUrl').addEventListener('blur', async (e) => {
                 const url = e.target.value;
                 const youtubeId = extractYouTubeId(url);
-                
+
                 if (youtubeId) {
                     const titleInput = document.getElementById('musicTitle');
                     const artistInput = document.getElementById('musicArtist');
-                    
+
                     if (!titleInput.value || !artistInput.value) {
                         const metadata = await getYouTubeMetadata(youtubeId);
                         if (!titleInput.value) titleInput.value = metadata.title;
@@ -3271,7 +3480,7 @@ Um texto por linha"></textarea>
                 onConfigChange: async (config) => {
                     const welcomeTitle = document.getElementById('welcomeTitle');
                     const searchInput = document.getElementById('searchInput');
-                    
+
                     welcomeTitle.textContent = config.welcome_title || defaultConfig.welcome_title;
                     searchInput.placeholder = config.search_placeholder || defaultConfig.search_placeholder;
                 },
@@ -3293,5 +3502,7 @@ Um texto por linha"></textarea>
         window.removeMusic = removeMusic;
         window.toggleFavorite = toggleFavorite;
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99e77f2d63cbf17f',t:'MTc2MzEzMzY2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'99e77f2d63cbf17f',t:'MTc2MzEzMzY2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
 </html>
