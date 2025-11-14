@@ -23,7 +23,7 @@
             box-sizing: border-box;
         }
 
-        /* Temas Animados */
+        /* Temas Animados - Expandidos */
         .theme-sweater {
             background: linear-gradient(135deg, #050a15 0%, #0d1a2f 100%);
             position: relative;
@@ -51,6 +51,36 @@
 
         .theme-gold {
             background: linear-gradient(135deg, #1a1510 0%, #2f2515 100%);
+            position: relative;
+        }
+
+        .theme-neon {
+            background: linear-gradient(135deg, #0f0a1a 0%, #1a0f2f 100%);
+            position: relative;
+        }
+
+        .theme-rose {
+            background: linear-gradient(135deg, #1a0a15 0%, #2f152a 100%);
+            position: relative;
+        }
+
+        .theme-mint {
+            background: linear-gradient(135deg, #0a1a15 0%, #152f25 100%);
+            position: relative;
+        }
+
+        .theme-cyber {
+            background: linear-gradient(135deg, #0a1a1a 0%, #152f2f 100%);
+            position: relative;
+        }
+
+        .theme-fire {
+            background: linear-gradient(135deg, #1a0f0a 0%, #2f1f15 100%);
+            position: relative;
+        }
+
+        .theme-ice {
+            background: linear-gradient(135deg, #0a151a 0%, #15252f 100%);
             position: relative;
         }
 
@@ -114,6 +144,54 @@
             animation: pulseGold 10s ease-in-out infinite;
         }
 
+        .theme-neon::before {
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(236, 72, 153, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+            animation: pulseNeon 7s ease-in-out infinite;
+        }
+
+        .theme-rose::before {
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(244, 114, 182, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(251, 113, 133, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.2) 0%, transparent 50%);
+            animation: pulseRose 9s ease-in-out infinite;
+        }
+
+        .theme-mint::before {
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(110, 231, 183, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.2) 0%, transparent 50%);
+            animation: pulseMint 8s ease-in-out infinite;
+        }
+
+        .theme-cyber::before {
+            background: 
+                radial-gradient(circle at 35% 25%, rgba(6, 182, 212, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 65% 75%, rgba(34, 197, 94, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 40%, rgba(14, 165, 233, 0.25) 0%, transparent 50%);
+            animation: pulseCyber 6s ease-in-out infinite;
+        }
+
+        .theme-fire::before {
+            background: 
+                radial-gradient(circle at 40% 30%, rgba(239, 68, 68, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 60% 70%, rgba(251, 146, 60, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 30% 80%, rgba(245, 101, 101, 0.25) 0%, transparent 50%);
+            animation: pulseFire 5s ease-in-out infinite;
+        }
+
+        .theme-ice::before {
+            background: 
+                radial-gradient(circle at 25% 35%, rgba(125, 211, 252, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 65%, rgba(186, 230, 253, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.2) 0%, transparent 50%);
+            animation: pulseIce 11s ease-in-out infinite;
+        }
+
         /* Partículas flutuantes */
         .floating-particles {
             position: fixed;
@@ -143,6 +221,12 @@
         .theme-purple .particle { background: #a855f7; box-shadow: 0 0 6px rgba(168, 85, 247, 0.3); }
         .theme-ocean .particle { background: #38bdf8; box-shadow: 0 0 6px rgba(56, 189, 248, 0.3); }
         .theme-gold .particle { background: #fbbf24; box-shadow: 0 0 6px rgba(251, 191, 36, 0.3); }
+        .theme-neon .particle { background: #ec4899; box-shadow: 0 0 8px rgba(236, 72, 153, 0.4); }
+        .theme-rose .particle { background: #f472b6; box-shadow: 0 0 6px rgba(244, 114, 182, 0.3); }
+        .theme-mint .particle { background: #34d399; box-shadow: 0 0 6px rgba(52, 211, 153, 0.3); }
+        .theme-cyber .particle { background: #06b6d4; box-shadow: 0 0 8px rgba(6, 182, 212, 0.4); }
+        .theme-fire .particle { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
+        .theme-ice .particle { background: #7dd3fc; box-shadow: 0 0 6px rgba(125, 211, 252, 0.3); }
 
         @keyframes floatUp {
             0% { 
@@ -169,6 +253,12 @@
         @keyframes pulsePurple { 0%, 100% { opacity: 0.9; } 50% { opacity: 1; } }
         @keyframes pulseOcean { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
         @keyframes pulseGold { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+        @keyframes pulseNeon { 0%, 100% { opacity: 0.9; } 33% { opacity: 1; } 66% { opacity: 0.8; } }
+        @keyframes pulseRose { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
+        @keyframes pulseMint { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+        @keyframes pulseCyber { 0%, 100% { opacity: 1; } 25% { opacity: 0.8; } 75% { opacity: 0.9; } }
+        @keyframes pulseFire { 0%, 100% { opacity: 0.9; } 20% { opacity: 1; } 40% { opacity: 0.8; } 80% { opacity: 1; } }
+        @keyframes pulseIce { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
 
         /* Layout Principal */
         .app-container {
@@ -916,6 +1006,12 @@
         .theme-option.purple { background: linear-gradient(135deg, #150a1a 0%, #2f1540 100%); }
         .theme-option.ocean { background: linear-gradient(135deg, #0a1520 0%, #153040 100%); }
         .theme-option.gold { background: linear-gradient(135deg, #1a1510 0%, #2f2515 100%); }
+        .theme-option.neon { background: linear-gradient(135deg, #0f0a1a 0%, #1a0f2f 100%); }
+        .theme-option.rose { background: linear-gradient(135deg, #1a0a15 0%, #2f152a 100%); }
+        .theme-option.mint { background: linear-gradient(135deg, #0a1a15 0%, #152f25 100%); }
+        .theme-option.cyber { background: linear-gradient(135deg, #0a1a1a 0%, #152f2f 100%); }
+        .theme-option.fire { background: linear-gradient(135deg, #1a0f0a 0%, #2f1f15 100%); }
+        .theme-option.ice { background: linear-gradient(135deg, #0a151a 0%, #15252f 100%); }
 
         .submit-btn {
             width: 100%;
@@ -971,81 +1067,397 @@
             animation: shake 0.5s ease-in-out;
         }
 
-        /* Mobile Responsivo */
+        /* Mobile Responsivo - Layout Completamente Novo */
         @media (max-width: 768px) {
             .sidebar {
-                transform: translateX(-100%);
+                width: 80px;
+                padding: 16px 8px;
+                transform: translateX(0);
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: calc(100vh - 120px);
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(20px);
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                z-index: 100;
             }
 
-            .sidebar.mobile-visible {
+            .sidebar.mobile-hidden {
                 transform: translateX(0);
             }
 
-            .main-content {
-                margin-left: 0;
-                padding: 16px;
-            }
-
-            .music-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 16px;
-            }
-
-            .welcome-title {
-                font-size: 24px;
-            }
-
-            .player {
-                flex-direction: column;
-                height: auto;
-                padding: 12px;
-                gap: 8px;
-            }
-
-            .player-left,
-            .player-right {
-                width: 100%;
+            .logo {
+                margin-bottom: 20px;
+                padding: 0;
                 justify-content: center;
             }
 
+            .logo span {
+                display: none;
+            }
+
+            .logo i {
+                font-size: 24px;
+            }
+
+            .nav-menu {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .nav-link {
+                padding: 12px 8px;
+                justify-content: center;
+                border-radius: 12px;
+                position: relative;
+                min-height: 48px;
+            }
+
+            .nav-link span {
+                display: none;
+            }
+
+            .nav-link i {
+                font-size: 18px;
+            }
+
+            .nav-link.active::after {
+                content: '';
+                position: absolute;
+                right: -8px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 3px;
+                height: 20px;
+                background: #1DB954;
+                border-radius: 2px;
+            }
+
+            .main-content {
+                margin-left: 80px;
+                padding: 16px 12px;
+                height: calc(100vh - 120px);
+                padding-bottom: 20px;
+            }
+
+            .header {
+                margin-bottom: 20px;
+            }
+
+            .welcome-title {
+                font-size: 20px;
+                margin-bottom: 16px;
+                line-height: 1.2;
+            }
+
+            .search-container {
+                max-width: 100%;
+            }
+
+            .search-input {
+                padding: 14px 16px 14px 44px;
+                font-size: 16px;
+                border-radius: 20px;
+            }
+
+            .music-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-top: 16px;
+            }
+
+            .music-card {
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(24, 24, 24, 0.8);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .card-cover {
+                margin-bottom: 12px;
+                border-radius: 12px;
+                aspect-ratio: 1;
+            }
+
+            .card-cover i {
+                font-size: 32px;
+            }
+
+            .card-title {
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+
+            .card-artist {
+                font-size: 12px;
+            }
+
+            .play-button,
+            .download-button {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+
+            .favorite-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+
+            /* Player Mobile Otimizado */
+            .player {
+                height: 120px;
+                padding: 12px 16px;
+                background: rgba(24, 24, 24, 0.95);
+                backdrop-filter: blur(20px);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                grid-template-rows: auto auto;
+                gap: 8px 12px;
+                align-items: center;
+            }
+
+            .player-left {
+                grid-column: 1;
+                grid-row: 1 / 3;
+                width: auto;
+                min-width: auto;
+            }
+
+            .player-cover {
+                width: 48px;
+                height: 48px;
+                border-radius: 8px;
+            }
+
+            .player-cover i {
+                font-size: 20px;
+            }
+
+            .player-info {
+                display: none;
+            }
+
             .player-center {
-                width: 100%;
-                order: 3;
+                grid-column: 2;
+                grid-row: 1 / 3;
+                max-width: none;
+                gap: 6px;
             }
 
             .player-controls {
-                gap: 12px;
+                gap: 8px;
+                justify-content: center;
+            }
+
+            .control-btn {
+                padding: 6px;
+                font-size: 14px;
+            }
+
+            .play-pause-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
             }
 
             .progress-container {
                 max-width: 100%;
+                gap: 8px;
+            }
+
+            .time-display {
+                font-size: 10px;
+                min-width: 32px;
+            }
+
+            .player-right {
+                grid-column: 3;
+                grid-row: 1 / 3;
+                width: auto;
+                min-width: auto;
+                justify-content: flex-end;
+            }
+
+            .volume-container {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .volume-slider {
+                width: 4px;
+                height: 60px;
+                writing-mode: bt-lr;
+                -webkit-appearance: slider-vertical;
+            }
+
+            .volume-fill {
+                width: 100%;
+                height: 100%;
+            }
+
+            /* Modais Mobile */
+            .modal-content {
+                padding: 24px 20px;
+                margin: 0 16px;
+                max-width: none;
+                width: calc(100% - 32px);
             }
 
             .lyrics-sidebar {
                 width: 100%;
                 padding: 16px;
+                height: calc(100vh - 120px);
             }
 
             .lyrics-line {
-                font-size: 20px;
+                font-size: 18px;
+                margin-bottom: 12px;
             }
 
             .admin-panel {
                 width: 100%;
+                padding-top: 60px;
             }
 
-            .mobile-menu-btn {
-                position: fixed;
-                top: 16px;
-                left: 16px;
-                z-index: 1001;
-                background: #000000;
-                border: none;
-                color: #ffffff;
+            .admin-content {
+                padding: 20px 16px;
+            }
+
+            .form-input,
+            .form-select,
+            .form-textarea {
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+
+            .icon-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 12px;
+            }
+
+            .theme-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .theme-option {
+                aspect-ratio: 1.5;
+                border-radius: 8px;
+            }
+
+            .submit-btn {
+                padding: 16px;
+                font-size: 16px;
+                border-radius: 12px;
+            }
+
+            /* Estados vazios mobile */
+            .empty-state {
+                padding: 32px 16px;
+            }
+
+            .empty-state i {
+                font-size: 48px;
+            }
+
+            .empty-state h3 {
                 font-size: 20px;
-                padding: 12px;
-                border-radius: 50%;
-                cursor: pointer;
+            }
+
+            .empty-state p {
+                font-size: 14px;
+            }
+
+            /* Toast mobile */
+            .toast {
+                top: 16px;
+                right: 16px;
+                left: 16px;
+                transform: translateY(-100px);
+                border-radius: 12px;
+                padding: 16px 20px;
+            }
+
+            .toast.show {
+                transform: translateY(0);
+            }
+
+            /* Configurações mobile */
+            .settings-container {
+                padding: 0;
+            }
+
+            .settings-section {
+                margin-bottom: 16px;
+                padding: 20px 16px;
+                border-radius: 12px;
+            }
+
+            .theme-selector {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .theme-card {
+                aspect-ratio: 1.5;
+                border-radius: 8px;
+            }
+
+            .theme-card div {
+                font-size: 10px;
+                bottom: 4px;
+                left: 4px;
+            }
+
+            /* Botão menu mobile removido */
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            /* Animações suaves para mobile */
+            .music-card {
+                transition: all 0.2s ease;
+            }
+
+            .music-card:active {
+                transform: scale(0.98);
+            }
+
+            .nav-link {
+                transition: all 0.2s ease;
+            }
+
+            .nav-link:active {
+                transform: scale(0.95);
+            }
+
+            /* Melhor contraste para mobile */
+            .card-title,
+            .card-artist {
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Scroll suave */
+            .main-content {
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Otimizações de toque */
+            .control-btn,
+            .play-button,
+            .download-button,
+            .favorite-btn {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
             }
         }
 
@@ -1252,13 +1664,19 @@
       </div>
      </div>
      <div class="form-group"><label class="form-label">Tema de Fundo</label>
-      <div class="theme-grid" id="themeGrid">
-       <div class="theme-option selected sweater" data-theme="sweater"></div>
-       <div class="theme-option sunset" data-theme="sunset"></div>
-       <div class="theme-option forest" data-theme="forest"></div>
-       <div class="theme-option purple" data-theme="purple"></div>
-       <div class="theme-option ocean" data-theme="ocean"></div>
-       <div class="theme-option gold" data-theme="gold"></div>
+      <div class="theme-grid" id="themeGrid" style="grid-template-columns: repeat(3, 1fr); gap: 8px;">
+       <div class="theme-option selected sweater" data-theme="sweater" title="Azul Clássico"></div>
+       <div class="theme-option sunset" data-theme="sunset" title="Pôr do Sol"></div>
+       <div class="theme-option forest" data-theme="forest" title="Floresta"></div>
+       <div class="theme-option purple" data-theme="purple" title="Roxo Místico"></div>
+       <div class="theme-option ocean" data-theme="ocean" title="Oceano"></div>
+       <div class="theme-option gold" data-theme="gold" title="Dourado"></div>
+       <div class="theme-option neon" data-theme="neon" title="Neon Vibrante"></div>
+       <div class="theme-option rose" data-theme="rose" title="Rosa Elegante"></div>
+       <div class="theme-option mint" data-theme="mint" title="Menta Fresca"></div>
+       <div class="theme-option cyber" data-theme="cyber" title="Cyber Tech"></div>
+       <div class="theme-option fire" data-theme="fire" title="Fogo Intenso"></div>
+       <div class="theme-option ice" data-theme="ice" title="Gelo Cristalino"></div>
       </div>
      </div>
      <div class="form-group"><label class="form-label">Texto Romântico/Poético</label> <textarea class="form-textarea" id="musicLyrics" placeholder="Digite o texto linha por linha..."></textarea>
@@ -1639,24 +2057,42 @@
                         
                         <div style="margin-bottom: 20px;">
                             <label style="display: block; color: #ffffff; font-weight: 600; margin-bottom: 12px;">Tema de Fundo</label>
-                            <div class="theme-selector" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-                                <div class="theme-card ${currentTheme === 'sweater' ? 'active' : ''}" data-theme="sweater" style="aspect-ratio: 2; border: 2px solid ${currentTheme === 'sweater' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #050a15 0%, #0d1a2f 100%); position: relative; overflow: hidden;">
-                                    <div style="position: absolute; bottom: 8px; left: 8px; color: #ffffff; font-size: 12px; font-weight: 600;">Azul</div>
+                            <div class="theme-selector" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                                <div class="theme-card ${currentTheme === 'sweater' ? 'active' : ''}" data-theme="sweater" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'sweater' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #050a15 0%, #0d1a2f 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Azul</div>
                                 </div>
-                                <div class="theme-card ${currentTheme === 'sunset' ? 'active' : ''}" data-theme="sunset" style="aspect-ratio: 2; border: 2px solid ${currentTheme === 'sunset' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #1a0a0f 0%, #2f1520 100%); position: relative; overflow: hidden;">
-                                    <div style="position: absolute; bottom: 8px; left: 8px; color: #ffffff; font-size: 12px; font-weight: 600;">Pôr do Sol</div>
+                                <div class="theme-card ${currentTheme === 'sunset' ? 'active' : ''}" data-theme="sunset" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'sunset' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #1a0a0f 0%, #2f1520 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Sunset</div>
                                 </div>
-                                <div class="theme-card ${currentTheme === 'forest' ? 'active' : ''}" data-theme="forest" style="aspect-ratio: 2; border: 2px solid ${currentTheme === 'forest' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #0a150a 0%, #152f15 100%); position: relative; overflow: hidden;">
-                                    <div style="position: absolute; bottom: 8px; left: 8px; color: #ffffff; font-size: 12px; font-weight: 600;">Floresta</div>
+                                <div class="theme-card ${currentTheme === 'forest' ? 'active' : ''}" data-theme="forest" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'forest' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #0a150a 0%, #152f15 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Forest</div>
                                 </div>
-                                <div class="theme-card ${currentTheme === 'purple' ? 'active' : ''}" data-theme="purple" style="aspect-ratio: 2; border: 2px solid ${currentTheme === 'purple' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #150a1a 0%, #2f1540 100%); position: relative; overflow: hidden;">
-                                    <div style="position: absolute; bottom: 8px; left: 8px; color: #ffffff; font-size: 12px; font-weight: 600;">Roxo</div>
+                                <div class="theme-card ${currentTheme === 'purple' ? 'active' : ''}" data-theme="purple" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'purple' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #150a1a 0%, #2f1540 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Purple</div>
                                 </div>
-                                <div class="theme-card ${currentTheme === 'ocean' ? 'active' : ''}" data-theme="ocean" style="aspect-ratio: 2; border: 2px solid ${currentTheme === 'ocean' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #0a1520 0%, #153040 100%); position: relative; overflow: hidden;">
-                                    <div style="position: absolute; bottom: 8px; left: 8px; color: #ffffff; font-size: 12px; font-weight: 600;">Oceano</div>
+                                <div class="theme-card ${currentTheme === 'ocean' ? 'active' : ''}" data-theme="ocean" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'ocean' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #0a1520 0%, #153040 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Ocean</div>
                                 </div>
-                                <div class="theme-card ${currentTheme === 'gold' ? 'active' : ''}" data-theme="gold" style="aspect-ratio: 2; border: 2px solid ${currentTheme === 'gold' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #1a1510 0%, #2f2515 100%); position: relative; overflow: hidden;">
-                                    <div style="position: absolute; bottom: 8px; left: 8px; color: #ffffff; font-size: 12px; font-weight: 600;">Dourado</div>
+                                <div class="theme-card ${currentTheme === 'gold' ? 'active' : ''}" data-theme="gold" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'gold' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #1a1510 0%, #2f2515 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Gold</div>
+                                </div>
+                                <div class="theme-card ${currentTheme === 'neon' ? 'active' : ''}" data-theme="neon" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'neon' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #0f0a1a 0%, #1a0f2f 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Neon</div>
+                                </div>
+                                <div class="theme-card ${currentTheme === 'rose' ? 'active' : ''}" data-theme="rose" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'rose' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #1a0a15 0%, #2f152a 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Rose</div>
+                                </div>
+                                <div class="theme-card ${currentTheme === 'mint' ? 'active' : ''}" data-theme="mint" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'mint' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #0a1a15 0%, #152f25 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Mint</div>
+                                </div>
+                                <div class="theme-card ${currentTheme === 'cyber' ? 'active' : ''}" data-theme="cyber" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'cyber' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #0a1a1a 0%, #152f2f 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Cyber</div>
+                                </div>
+                                <div class="theme-card ${currentTheme === 'fire' ? 'active' : ''}" data-theme="fire" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'fire' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #1a0f0a 0%, #2f1f15 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Fire</div>
+                                </div>
+                                <div class="theme-card ${currentTheme === 'ice' ? 'active' : ''}" data-theme="ice" style="aspect-ratio: 1.5; border: 2px solid ${currentTheme === 'ice' ? '#1DB954' : '#404040'}; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #0a151a 0%, #15252f 100%); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 4px; left: 4px; color: #ffffff; font-size: 10px; font-weight: 600;">Ice</div>
                                 </div>
                             </div>
                         </div>
@@ -2812,5 +3248,5 @@
         window.clearAllData = clearAllData;
         window.confirmClearData = confirmClearData;
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99e871f4a75f2d34',t:'MTc2MzE0MzYxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99e87b45c45f2d34',t:'MTc2MzE0Mzk5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
