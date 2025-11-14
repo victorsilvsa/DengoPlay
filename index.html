@@ -2423,6 +2423,8 @@ Um texto por linha"></textarea>
     <div id="youtubePlayer"
         style="position: fixed; top: -100px; left: -100px; width: 1px; height: 1px; pointer-events: none;"></div>
     <script>
+        loadYouTubeAPI();
+
         // Configuration
         const defaultConfig = {
             welcome_title: "Bem-vindo ao DengoPlay",
@@ -2541,6 +2543,17 @@ Um texto por linha"></textarea>
             const firstScriptTag = document.getElementsByTagName('script')[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         }
+const youtubeReadyInterval = setInterval(() => {
+    if (isYouTubeReady) {
+        clearInterval(youtubeReadyInterval);
+    } else {
+        try {
+            if (YT && YT.Player) {
+                youtubePlayer = new YT.Player('youtubePlayer');
+            }
+        } catch(e) {}
+    }
+}, 500);
 
         // YouTube API Ready Callback
         window.onYouTubeIframeAPIReady = function () {
@@ -2948,23 +2961,31 @@ Um texto por linha"></textarea>
             });
         }
 
-        function playYouTubeAudio(url) {
-            if (!isYouTubeReady) {
-                showToast('Player do YouTube ainda não está pronto', 'error');
-                return;
-            }
+async function playYouTubeAudio(url) {
+    const videoId = extractYouTubeId(url);
+    if (!videoId) {
+        showToast('URL do YouTube inválida', 'error');
+        return;
+    }
 
-            const videoId = extractYouTubeId(url);
-            if (!videoId) {
-                showToast('URL do YouTube inválida', 'error');
-                return;
-            }
+    // Aguarda até o YouTube estar pronto
+    let checks = 0;
+    while (!isYouTubeReady && checks < 20) { 
+        await new Promise(r => setTimeout(r, 200));
+        checks++;
+    }
 
-            currentAudioType = 'youtube';
-            audioPlayer.pause();
-            youtubePlayer.loadVideoById(videoId);
-            youtubePlayer.playVideo();
-        }
+    if (!isYouTubeReady) {
+        showToast('Player do YouTube demorou para carregar. Tente novamente.', 'error');
+        return;
+    }
+
+    currentAudioType = 'youtube';
+    audioPlayer.pause();
+
+    youtubePlayer.loadVideoById(videoId);
+    youtubePlayer.playVideo();
+}
 
         function togglePlayPause() {
             if (currentAudioType === 'html5') {
