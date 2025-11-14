@@ -84,6 +84,16 @@
             position: relative;
         }
 
+        .theme-silver {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            position: relative;
+        }
+
+        .theme-charcoal {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+        }
+
         /* Partículas e Animações de Background */
         .theme-particles::before {
             content: '';
@@ -192,6 +202,22 @@
             animation: pulseIce 11s ease-in-out infinite;
         }
 
+        .theme-silver::before {
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(192, 192, 192, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(169, 169, 169, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(211, 211, 211, 0.2) 0%, transparent 50%);
+            animation: pulseSilver 9s ease-in-out infinite;
+        }
+
+        .theme-charcoal::before {
+            background: 
+                radial-gradient(circle at 35% 25%, rgba(64, 64, 64, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 65% 75%, rgba(96, 96, 96, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 20% 60%, rgba(128, 128, 128, 0.25) 0%, transparent 50%);
+            animation: pulseCharcoal 10s ease-in-out infinite;
+        }
+
         /* Partículas flutuantes */
         .floating-particles {
             position: fixed;
@@ -227,6 +253,8 @@
         .theme-cyber .particle { background: #06b6d4; box-shadow: 0 0 8px rgba(6, 182, 212, 0.4); }
         .theme-fire .particle { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
         .theme-ice .particle { background: #7dd3fc; box-shadow: 0 0 6px rgba(125, 211, 252, 0.3); }
+        .theme-silver .particle { background: #c0c0c0; box-shadow: 0 0 6px rgba(192, 192, 192, 0.4); }
+        .theme-charcoal .particle { background: #808080; box-shadow: 0 0 6px rgba(128, 128, 128, 0.4); }
 
         @keyframes floatUp {
             0% { 
@@ -259,6 +287,8 @@
         @keyframes pulseCyber { 0%, 100% { opacity: 1; } 25% { opacity: 0.8; } 75% { opacity: 0.9; } }
         @keyframes pulseFire { 0%, 100% { opacity: 0.9; } 20% { opacity: 1; } 40% { opacity: 0.8; } 80% { opacity: 1; } }
         @keyframes pulseIce { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
+        @keyframes pulseSilver { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+        @keyframes pulseCharcoal { 0%, 100% { opacity: 0.9; } 50% { opacity: 1; } }
 
         /* Layout Principal */
         .app-container {
@@ -270,19 +300,69 @@
 
         /* Sidebar */
         .sidebar {
-            width: 232px;
-            background: #000000;
-            padding: 24px 12px;
+            width: 200px;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 12px;
             display: flex;
             flex-direction: column;
             position: fixed;
             height: calc(100vh - 90px);
             z-index: 100;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .sidebar.mobile-hidden {
+        .sidebar.hidden {
             transform: translateX(-100%);
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 44px;
+            height: 44px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 150;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-toggle:hover {
+            background: rgba(29, 185, 84, 0.8);
+            transform: scale(1.1);
+        }
+
+        .sidebar-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: #b3b3b3;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
         }
 
         .logo {
@@ -338,12 +418,17 @@
         /* Main Content */
         .main-content {
             flex: 1;
-            margin-left: 232px;
+            margin-left: 200px;
             padding: 24px;
             overflow-y: auto;
             height: calc(100vh - 90px);
             position: relative;
             z-index: 10;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.expanded {
+            margin-left: 0;
         }
 
         /* Header */
@@ -686,20 +771,45 @@
             position: fixed;
             right: 0;
             top: 0;
-            width: 350px;
+            width: 320px;
             height: calc(100vh - 90px);
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
             border-left: 1px solid rgba(255, 255, 255, 0.1);
             padding: 24px;
             transform: translateX(100%);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             z-index: 200;
             overflow-y: auto;
         }
 
         .lyrics-sidebar.active {
             transform: translateX(0);
+        }
+
+        .lyrics-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 150;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lyrics-toggle:hover {
+            background: rgba(29, 185, 84, 0.8);
+            transform: scale(1.1);
         }
 
         .lyrics-header {
@@ -1012,6 +1122,8 @@
         .theme-option.cyber { background: linear-gradient(135deg, #0a1a1a 0%, #152f2f 100%); }
         .theme-option.fire { background: linear-gradient(135deg, #1a0f0a 0%, #2f1f15 100%); }
         .theme-option.ice { background: linear-gradient(135deg, #0a151a 0%, #15252f 100%); }
+        .theme-option.silver { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); }
+        .theme-option.charcoal { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); }
 
         .submit-btn {
             width: 100%;
@@ -1070,21 +1182,32 @@
         /* Mobile Responsivo - Layout Completamente Novo */
         @media (max-width: 768px) {
             .sidebar {
-                width: 80px;
-                padding: 16px 8px;
-                transform: translateX(0);
-                position: fixed;
-                left: 0;
-                top: 0;
+                width: 70px;
+                padding: 12px 6px;
+                background: rgba(0, 0, 0, 0.98);
+                backdrop-filter: blur(25px);
+                border-right: 1px solid rgba(255, 255, 255, 0.15);
                 height: calc(100vh - 120px);
-                background: rgba(0, 0, 0, 0.95);
-                backdrop-filter: blur(20px);
-                border-right: 1px solid rgba(255, 255, 255, 0.1);
-                z-index: 100;
             }
 
-            .sidebar.mobile-hidden {
-                transform: translateX(0);
+            .sidebar.hidden {
+                transform: translateX(-100%);
+            }
+
+            .sidebar-toggle {
+                top: 16px;
+                left: 16px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .sidebar-close {
+                top: 12px;
+                right: 12px;
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
             }
 
             .logo {
@@ -1136,10 +1259,27 @@
             }
 
             .main-content {
-                margin-left: 80px;
+                margin-left: 70px;
                 padding: 16px 12px;
                 height: calc(100vh - 120px);
                 padding-bottom: 20px;
+            }
+
+            .main-content.expanded {
+                margin-left: 0;
+            }
+
+            .lyrics-toggle {
+                top: 16px;
+                right: 16px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .lyrics-sidebar {
+                width: 100%;
+                padding: 16px;
             }
 
             .header {
@@ -1541,10 +1681,10 @@
   <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
- <body><!-- Botão Menu Mobile --> <button class="mobile-menu-btn" id="mobileMenuBtn" style="display: none;"> <i class="fas fa-bars"></i> </button> <!-- Container Principal -->
+ <body><!-- Controles das Sidebars --> <button class="sidebar-toggle" id="sidebarToggle"> <i class="fas fa-bars"></i> </button> <button class="lyrics-toggle" id="lyricsToggle" style="display: none;"> <i class="fas fa-align-left"></i> </button> <!-- Container Principal -->
   <div class="app-container theme-sweater theme-particles" id="appContainer"><!-- Partículas Flutuantes -->
    <div class="floating-particles" id="floatingParticles"></div><!-- Sidebar -->
-   <nav class="sidebar" id="sidebar">
+   <nav class="sidebar" id="sidebar"><button class="sidebar-close" id="sidebarClose"> <i class="fas fa-times"></i> </button>
     <div class="logo"><i class="fas fa-headphones"></i> <span>MusicPlay</span>
     </div>
     <ul class="nav-menu">
@@ -1677,6 +1817,8 @@
        <div class="theme-option cyber" data-theme="cyber" title="Cyber Tech"></div>
        <div class="theme-option fire" data-theme="fire" title="Fogo Intenso"></div>
        <div class="theme-option ice" data-theme="ice" title="Gelo Cristalino"></div>
+       <div class="theme-option silver" data-theme="silver" title="Prata Elegante"></div>
+       <div class="theme-option charcoal" data-theme="charcoal" title="Carvão Profundo"></div>
       </div>
      </div>
      <div class="form-group"><label class="form-label">Texto Romântico/Poético</label> <textarea class="form-textarea" id="musicLyrics" placeholder="Digite o texto linha por linha..."></textarea>
@@ -1937,8 +2079,14 @@
             // Letras
             elements.closeLyrics.addEventListener('click', closeLyricsSidebar);
             
-            // Mobile Menu
-            elements.mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            // Controles das Sidebars
+            elements.sidebarToggle = document.getElementById('sidebarToggle');
+            elements.sidebarClose = document.getElementById('sidebarClose');
+            elements.lyricsToggle = document.getElementById('lyricsToggle');
+            
+            elements.sidebarToggle.addEventListener('click', toggleSidebar);
+            elements.sidebarClose.addEventListener('click', closeSidebar);
+            elements.lyricsToggle.addEventListener('click', toggleLyricsSidebar);
             
             // Audio Events
             elements.audioPlayer.addEventListener('timeupdate', updateProgress);
@@ -1960,6 +2108,12 @@
         function handleNavigation(e) {
             e.preventDefault();
             const tab = e.currentTarget.dataset.tab;
+            
+            // Verificar se precisa de autenticação
+            if ((tab === 'add' || tab === 'settings') && !isAuthenticated) {
+                openPasswordModal();
+                return;
+            }
             
             // Remover classe ativa de todos os links
             document.querySelectorAll('.nav-link').forEach(link => {
@@ -1987,20 +2141,11 @@
                     showFavorites();
                     break;
                 case 'add':
-                    if (isAuthenticated) {
-                        openAdminPanel();
-                    } else {
-                        openPasswordModal();
-                    }
+                    openAdminPanel();
                     break;
                 case 'settings':
                     showSettingsTab();
                     break;
-            }
-            
-            // Fechar menu mobile se estiver aberto
-            if (window.innerWidth <= 768) {
-                elements.sidebar.classList.remove('mobile-visible');
             }
         }
 
@@ -3151,21 +3296,45 @@
             elements.lyricsSidebar.classList.remove('active');
         }
 
-        // Mobile
-        function checkMobile() {
-            const isMobile = window.innerWidth <= 768;
+        // Controles das Sidebars
+        function toggleSidebar() {
+            elements.sidebar.classList.toggle('hidden');
+            elements.mainContent.classList.toggle('expanded');
             
-            if (isMobile) {
-                elements.mobileMenuBtn.style.display = 'block';
-                elements.sidebar.classList.add('mobile-hidden');
+            // Atualizar ícone
+            const icon = elements.sidebarToggle.querySelector('i');
+            if (elements.sidebar.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars';
             } else {
-                elements.mobileMenuBtn.style.display = 'none';
-                elements.sidebar.classList.remove('mobile-hidden', 'mobile-visible');
+                icon.className = 'fas fa-times';
             }
         }
 
-        function toggleMobileMenu() {
-            elements.sidebar.classList.toggle('mobile-visible');
+        function closeSidebar() {
+            elements.sidebar.classList.add('hidden');
+            elements.mainContent.classList.add('expanded');
+            
+            // Atualizar ícone do toggle
+            const icon = elements.sidebarToggle.querySelector('i');
+            icon.className = 'fas fa-bars';
+        }
+
+        function toggleLyricsSidebar() {
+            elements.lyricsSidebar.classList.toggle('active');
+            
+            // Atualizar ícone
+            const icon = elements.lyricsToggle.querySelector('i');
+            if (elements.lyricsSidebar.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-align-left';
+            }
+        }
+
+        // Mobile
+        function checkMobile() {
+            // Não há mais necessidade de lógica especial para mobile
+            // Os controles funcionam igual em desktop e mobile
         }
 
         // Toast Notifications
@@ -3248,5 +3417,5 @@
         window.clearAllData = clearAllData;
         window.confirmClearData = confirmClearData;
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99e87b45c45f2d34',t:'MTc2MzE0Mzk5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99e88663d4e0119d',t:'MTc2MzE0NDQ0OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
